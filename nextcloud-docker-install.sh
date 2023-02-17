@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prüfen, ob die Volumes schon erstellt wurden
-if [ "$(docker volume ls -q -f name=db_data)" ] && [ "$(docker volume ls -q -f name=nextcloud_data)" ]; then
+if [ "$(docker volume inspect db_data 2> /dev/null)" ] && [ "$(docker volume inspect nextcloud_data 2> /dev/null)" ]; then
     echo "Volumes 'db_data' und 'nextcloud_data' sind schon vorhanden."
     exit 0
 fi
