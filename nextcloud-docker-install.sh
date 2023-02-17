@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Prüfen, ob die Volumes schon erstellt wurden
-if [ "$(docker volume inspect db_data 2> /dev/null)" ] && [ "$(docker volume inspect nextcloud_data 2> /dev/null)" ]; then
-    echo "Volumes 'db_data' und 'nextcloud_data' sind schon vorhanden."
-    exit 0
-fi
-
 # Installation von Docker, Docker.io und Docker-Compose
 
 apt update
