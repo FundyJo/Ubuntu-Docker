@@ -20,3 +20,4 @@ chmod +x nextcloud-docker-install.sh
 - MySQL Benutzername
 - MySQL Passwort
 ```
+#### Copyright 17/02/2023 Timo Schiener
