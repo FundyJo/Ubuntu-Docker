@@ -120,7 +120,7 @@ if docker ps -a | grep nextcloud >/dev/null 2>&1; then
       echo "                     NOTIZ"
       echo " Die erreichbarkeit der Website dauert im normal Fall"
       echo "   20 - 30 Sekunden da der Container vollstädige staten"
-      echo "   muss ... gedulden sie sich bitte daher etwas"
+      echo "     muss ... gedulden sie sich bitte daher etwas"
       echo " "
 else
   echo "Ein Fehler ist aufgetreten."
