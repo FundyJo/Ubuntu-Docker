@@ -70,6 +70,9 @@ while [[ "$mysql_password" != "$mysql_password_confirmation" ]]; do
     read -s mysql_password_confirmation
 done
 
+echo "Passwörter stimmen überein!"
+echo "Achtung der Container wird nun aufgesetzt und verbunden!"
+
 # Docker-Compose-Datei erstellen
 cat > docker-compose.yml << EOF
 version: '3'
@@ -113,7 +116,12 @@ docker-compose up -d
 # Überprüfen ob das der Container gestartet wurde und läuft
 if docker ps -a | grep nextcloud >/dev/null 2>&1; then
   echo "Der Container ist nun erreichbar unter (localhost:80)"
+      echo " "
+      echo "                     NOTIZ"
+      echo " Die erreichbarkeit der Website dauert im normal Fall"
+      echo "   20 - 30 Sekunden da der Container vollstädige staten"
+      echo "   muss ... gedulden sie sich bitte daher etwas"
+      echo " "
 else
   echo "Ein Fehler ist aufgetreten."
 fi
-
