@@ -8,8 +8,8 @@ Dabei werden über User Eingaben direkt Benutzername und Passwort von Nextcloud 
 Das Script muss als Sudo User ausgeführt werden! 
 
 ```bash
-chmod +x nextcloud-docker-install.sh
-./nextcloud-docker-install.sh
+chmod +x docker-nexcloud-install.sh
+./docker-nexcloud-install.sh
 ```
 
 ## Benötigte Eingaben
