@@ -21,6 +21,10 @@ chmod +x docker-nexcloud-install.sh
 - MySQL Passwort
 ```
 
+## Bekannte Fehler:
+
+- Docker & Docker.io nicht installiert.
+
 ## Löschen falls Container vorhanden ist
 
 ```bash
