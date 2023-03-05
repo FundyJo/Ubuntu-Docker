@@ -20,4 +20,10 @@ chmod +x docker-nexcloud-install.sh
 - MySQL Benutzername
 - MySQL Passwort
 ```
+
+## Löschen falls Container vorhanden ist
+
+```bash
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+```
 ##### Copyright 17/02/2023 Timo Schiener
