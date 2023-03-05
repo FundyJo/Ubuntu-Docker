@@ -13,6 +13,9 @@ chmod +x docker-nexcloud-install.sh
 ```
 
 ## Benötigte Eingaben
+- aktuell Supportete Geräte: Ubuntu 16<
+
+## Benötigte Eingaben
 
 ```bash
 - Nextcloud Nutzername
