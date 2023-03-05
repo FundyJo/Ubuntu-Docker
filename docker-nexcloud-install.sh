@@ -5,7 +5,7 @@
 apt update
 
 if command -v docker >/dev/null 2>&1; then
-    echo "Docker ist bereits installiert."
+    echo "Docker wird installiert."
 else
     apt install -y docker
 fi
@@ -13,9 +13,9 @@ fi
 if command -v docker.io >/dev/null 2>&1; then
     echo "Docker.io ist bereits installiert."
 else
+    echo "Docker.io wird installiert."
     apt install -y docker.io
 fi
-echo "Es wird überprüft ob bereits schon Docker.io installiert wurde ..."
 
 # Volume erstellen
 docker volume create db_data
