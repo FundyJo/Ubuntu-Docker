@@ -6,37 +6,6 @@ apt update
 
 echo "Es wird überprüft ob bereits schon Docker.io installiert wurde ..."
 
-if command -v docker.io >/dev/null 2>&1; then
-  echo "Docker.io ist bereits installiert."
-else
-  echo "Installation von Docker.io gestartet..."
-  progress="["
-  percentage=0
-  while [ $percentage -lt 100 ]; do
-    progress="$progress="
-    percentage=$((percentage + 1))
-    echo -ne "\r$progress  $percentage%"
-    sleep 0.1
-  done
-  progress="$progress]"
-  echo -e "\nInstallation abgeschlossen! Docker.io ist jetzt installiert."
-  apt install -y docker.io >/dev/null 2>&1
-fi
-
-if command -v docker-compose >/dev/null 2>&1; then
-    echo "Docker-Compose is installed."
-else
-    echo "Docker-Compose is not installed."
-    echo " "
-    echo "                     ACHTUNG"
-    echo " Dieses Prozess kann etwas länger dauern abhängend"
-    echo "   von der Internet Geschwindigkeit und weiteren"
-    echo "   Faktoren gedulden sie sich bitte daher etwas"
-    echo " "
-    apt install -y docker-compose
-fi
-
-
 # Volume erstellen
 docker volume create db_data
 docker volume create nextcloud_data
