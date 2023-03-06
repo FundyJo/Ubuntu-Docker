@@ -1,20 +1,45 @@
 #!/bin/bash
 
-# Installation von Docker, Docker.io und Docker-Compose
-
-apt update
-
-if command -v docker >/dev/null 2>&1; then
-    echo "Docker wird installiert."
+# Feststellen der Linux-Distribution
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS=$ID
+elif type lsb_release >/dev/null 2>&1; then
+    OS=$(lsb_release -si)
 else
-    apt install -y docker
+    OS=$(uname -s)
 fi
 
-if command -v docker.io >/dev/null 2>&1; then
-    echo "Docker.io ist bereits installiert."
+# Installation von Docker, Docker.io und Docker-Compose
+if [ "$OS" == "ubuntu" ] || [ "$OS" == "debian" ]; then
+    apt update
+    if command -v docker >/dev/null 2>&1; then
+        echo "Docker wird installiert."
+    else
+        apt install -y docker
+    fi
+    if command -v docker.io >/dev/null 2>&1; then
+        echo "Docker.io ist bereits installiert."
+    else
+        echo "Docker.io wird installiert."
+        apt install -y docker.io
+    fi
+    if ! command -v docker-compose >/dev/null 2>&1; then
+        echo "Docker-Compose wird installiert."
+        apt install -y docker-compose
+    fi
+elif [ "$OS" == "centos" ] || [ "$OS" == "fedora" ]; then
+    yum install -y docker
+    systemctl start docker
+    systemctl enable docker
+    if ! command -v docker-compose >/dev/null 2>&1; then
+        echo "Docker-Compose wird installiert."
+        curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+    fi
 else
-    echo "Docker.io wird installiert."
-    apt install -y docker.io
+    echo "Ihre Linux-Distribution wird derzeit nicht unterstützt."
+    exit 1
 fi
 
 # Volume erstellen
