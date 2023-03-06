@@ -13,7 +13,7 @@ chmod +x docker-nexcloud-install.sh
 ```
 
 ## Benötigte Eingaben
-- aktuell Supportete Geräte: Ubuntu 16<
+- aktuell Supportete Geräte: Ubuntu, Debian, CentOS und anderen normalen Linux-Distributionen.
 
 ## Benötigte Eingaben
 
