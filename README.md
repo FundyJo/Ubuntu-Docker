@@ -10,6 +10,8 @@ Dabei werden über User Eingaben direkt Benutzername und Passwort von Nextcloud 
 
 ports:
    - "80:80" -> "(gewünschter port):80"
+
+(verändere Zeile 103)
 ```
 
 ## Installation
