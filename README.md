@@ -3,6 +3,14 @@
 Dieses Script ist für die erleichterte Installation über Docker von Nextcloud gedacht.
 Dabei werden über User Eingaben direkt Benutzername und Passwort von Nextcloud als auch für die dazu gehörige Datenbank gesetzt ... die Daten werden auf einen erstellten Volumen gespeichert wobei jeweils eins für die Datenbank zuständig ist und das andere für Nextcloud.
 
+## Bekannte Probleme
+
+```bash
+- Anderer Container verwendet bereits Port 80!
+
+Tipp:
+```
+
 ## Installation
 
 Das Script muss als Sudo User ausgeführt werden! 
