@@ -50,9 +50,9 @@ docker volume create nextcloud_data
 echo "Geben Sie bitte den gewünschten Nextcloud-Benutzernamen ein: "
 read nextcloud_user
 echo "Geben Sie bitte das gewünschte Nextcloud-Passwort ein: "
-read nextcloud_password
+read -s nextcloud_password
 echo "Bitte bestätigen Sie das Passwort erneut: "
-read nextcloud_password_confirmation
+read -s nextcloud_password_confirmation
 
 while [[ "$nextcloud_password" != "$nextcloud_password_confirmation" ]]; do
     echo "Passwörter stimmen nicht überein. Bitte versuchen Sie es erneut."
@@ -66,9 +66,9 @@ done
 echo "Geben Sie bitte den gewünschten MySQL-Benutzernamen ein: "
 read mysql_user
 echo "Geben Sie bitte das gewünschte MySQL-Passwort ein: "
-read mysql_password
+read -s mysql_password
 echo "Bitte bestätigen Sie das Passwort erneut: "
-read mysql_password_confirmation
+read -s mysql_password_confirmation
 
 while [[ "$mysql_password" != "$mysql_password_confirmation" ]]; do
     echo "Passwörter stimmen nicht überein. Bitte versuchen Sie es erneut."
