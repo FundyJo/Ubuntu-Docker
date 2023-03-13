@@ -8,12 +8,8 @@ Dabei werden über User Eingaben direkt Benutzername und Passwort von Nextcloud 
 ```bash
 - Anderer Container verwendet bereits Port 80!
 
-Tipp:
-ändere in der "docker-nextcloud-install.sh"
-die Zeile 103
-
-    ports:
-      - "80:80" -> "(gewünschter port):80"
+ports:
+   - "80:80" -> "(gewünschter port):80"
 ```
 
 ## Installation
